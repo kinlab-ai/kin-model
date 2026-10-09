@@ -85,7 +85,7 @@ jobs:
       - name: Check out kin-db
         uses: actions/checkout@v6
         with:
-          repository: firelock-ai/kin-db
+          repository: kinlab-ai/kin-db
           # `refs/heads/` explicitly, so the value is resolved as a BRANCH by
           # the checkout action rather than left to its own classification.
           # actions/checkout reads a bare 40 or 64 character hex ref as a
@@ -105,13 +105,13 @@ jobs:
         run: |
           set -euo pipefail
           sha="$(git rev-parse HEAD)"
-          printf 'graded against firelock-ai/kin-db ref=%s sha=%s\n' "$RESOLVED_REF" "$sha"
+          printf 'graded against kinlab-ai/kin-db ref=%s sha=%s\n' "$RESOLVED_REF" "$sha"
           {
             echo "### Downstream consumer graded"
             echo
             echo "| field | value |"
             echo "|---|---|"
-            echo "| repository | \`firelock-ai/kin-db\` |"
+            echo "| repository | \`kinlab-ai/kin-db\` |"
             echo "| ref | \`$RESOLVED_REF\` |"
             echo "| sha | \`$sha\` |"
           } >> "$GITHUB_STEP_SUMMARY"
