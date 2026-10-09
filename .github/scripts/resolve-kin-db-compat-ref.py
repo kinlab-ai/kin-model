@@ -162,7 +162,7 @@ def resolve(body: str) -> str:
         )
     if ":" in value:
         refuse(
-            f"`{value}` is owner-qualified; this names a branch of firelock-ai/kin-db, "
+            f"`{value}` is owner-qualified; this names a branch of kinlab-ai/kin-db, "
             "never a fork"
         )
     if value.lower().startswith("refs/"):
