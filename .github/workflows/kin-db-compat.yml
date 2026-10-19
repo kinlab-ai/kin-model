@@ -44,6 +44,10 @@ on:
       # that picks the consumer change without the consumer ever being built.
       - ".github/scripts/**"
 
+# Least privilege: every job here only reads the repository.
+permissions:
+  contents: read
+
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
